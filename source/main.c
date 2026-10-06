@@ -31,7 +31,7 @@ int main(void) {
   } else if ((0x0500 <= fw) && (fw < 0x0650)) {
     if (hv_defeat_0506(shellcode_kernel, shellcode_kernel_len))
       goto err;
-  } else if ((0x0650 <= fw) && (fw < 0x0800)) {
+  } else if ((0x0650 <= fw) && (fw < 0x0970)) {
     if (hv_defeat_0607(shellcode_kernel, shellcode_kernel_len))
       goto err;
   } else {
