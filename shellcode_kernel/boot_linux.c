@@ -79,7 +79,7 @@ static inline uint64_t vmmcall(uint64_t nr, uint64_t a0, uint64_t a1,
 static uint64_t get_hv_shm(void) {
   if (args.fw_version >= 0x0500 && args.fw_version < 0x0600) {
     return 0x62a01000;
-  } else if (args.fw_version >= 0x0600 && args.fw_version < 0x0800) {
+  } else if (args.fw_version >= 0x0600 && args.fw_version < 0x0950) {
     return 0x62a22000;
   }
   return -1;
