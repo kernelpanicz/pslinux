@@ -1,35 +1,8 @@
-# ps5-linux
+# pslinux !1!!
 
-**ps5-linux** leverages patched HV vulnerabilities to transform your **PS5 Phat and Slim** console running **3.00-7.61 firmwares** into a highly capable Linux PC, unlocking its full hardware potential for desktop use. Powered by 8 CPU cores (16 threads) at **3.5 GHz** and a GPU at **2.23 GHz**, it provides enough performance to run Steam games and various emulators with impressive fluidity.
+im gonna try to get 9.40 working :3
 
-Features:
-
-- HDMI 4K60 video and audio output
-- M.2 SSD as dedicated Linux partition
-- All USB ports usable for peripherals
-- BD drive usable via custom ahci driver
-- Internal Bluetooth usable via custom xhci driver
-- Ethernet port usable via custom gbe driver
-
-![Alt Text](logo.webp)
-
-## PS5 firmware
-
-*ps5-linux* is only supported on PS5 Phat and Slim on the following firmwares:
-
-- **3.00**, **3.10**, **3.20**, **3.21** without M.2 support
-- **4.00**, **4.02**, **4.03**, **4.50**, **4.51** with M.2 support
-- **5.00**, **5.02**, **5.10**, **5.50** with M.2 support
-- **6.00**, **6.02**, **6.50** with M.2 support
-- **7.00**, **7.01**, **7.20**, **7.40**, **7.60**, **7.61** with M.2 support
-
-Support for 1.xx and 2.xx firmwares may be added in the future, but we will not prioritize this effort.
-
-If you are on firmwares in-between or you want to update to a specific firmware, [download the correct PUP](https://darthsternie.net/ps5-firmwares/) and follow the [official guide](https://www.playstation.com/en-us/support/hardware/reinstall-playstation-system-software-safe-mode) to upgrade your PS5. **Obviously you cannot downgrade.**
-
-## Hardwares
-
-To run *ps5-linux*, you need some required and optional hardwares:
+## Hardware needed
 
 - **Required**: USB drive with minimum 64GB (ideally external SSD) to install and run Linux.
 - **Required**: USB keyboard/mouse (dongles supported too).
@@ -58,35 +31,6 @@ If you reset your PS5 settings or reinstall the FW, you need to reapply these se
 #### Pre-built images
 
 You can download them from [ps5-linux-image](https://github.com/ps5-linux/ps5-linux-image/releases/tag/latest). Recommended is `ps5-ubuntu2604.img.xz`. Unpack the `.xz` file.
-
-#### Build your own image
-
-If you use Windows,  run this in PowerShell or CMD as administrator to install WSL
-
-```bash
-wsl --install
-```
-
-Install docker:
-
-```bash
-sudo apt update
-sudo apt install docker.io -y
-sudo service docker start
-sudo usermod -aG docker $USER
-```
-
-Then clone and build:
-
-```bash
-cd ~/
-git clone https://github.com/ps5-linux/ps5-linux-image
-cd ps5-linux-image
-chmod +x ./build_image.sh
-./build_image.sh --distro ubuntu2604
-```
-
-The finished image is written to `output/ps5-ubuntu2604.img`.
 
 ### 2. Flash the image to USB
 Minimum drive size: 64 GB. An external SSD is strongly recommended.
@@ -254,14 +198,11 @@ sudo ./ps5_control --boost on
 
 Always turn on fan when your turn on boost, as this is what the official PS5 OS does.
 
-## Updating ps5-linux
-
-For any future ps5-linux updates, you can download the `.deb` or `.pkg.tar.zst` on your PS5 from [ps5-linux-patches](https://github.com/ps5-linux/ps5-linux-patches/releases) and install them like normal packages.
 
 ## FAQ
 
 - Q: Will higher >=8.00 firmwares be supported?
-  - A: No.
+  - A: im gonna try :3.
 - Q: Why can I not use M.2 on 3.xx?
   - A: Because the PS5 fails to boot with it attached.
 - Q: Can I dual-boot Linux and PS5 OS?
@@ -297,17 +238,8 @@ Many configurations, tips and tricks from the [AMD BC250 Documentation](https://
 - hdmi audio output does not work on some monitors
 - hdmi 1440p and 2160p video output does not work on some monitors
 
-## Upstreamed changes
-
-During this project, we have upstreamed some changes:
-
-- [drm/amd: fix dcn 2.01 check](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/drivers/gpu/drm/amd/display/dc?id=39f44f54afa58661ecae9c27e15f5dbce2372892)
-- [amd/addrlib: Add more GFX1013 GPUs](https://gitlab.freedesktop.org/mesa/mesa/-/commit/44bed00b8bbcb1825e2c920cf1a828efdc72b1f1)
-
 ## Discord
-
-Join our [Discord server](https://discord.gg/PeMGVB7BAm) to celebrate Linux on PS5, receive help, learn tips & tricks, join development, or report issues.
-
+i dunno yet
 ## Credits
 
 - [theflow](https://github.com/TheOfficialFloW): [ps5-linux-loader](https://github.com/ps5-linux/ps5-linux-loader), [ps5-linux-patches](https://github.com/ps5-linux/ps5-linux-patches), [ps5-linux-tools](https://github.com/ps5-linux/ps5-linux-tools)
